@@ -10,7 +10,7 @@
 
 # testing
 /coverage
-
+/uber/
 # next.js
 /.next/
 /out/
@@ -41,6 +41,7 @@ next-env.d.ts
 
 # project config
 .agents/
+/agents/
 .atl/
 skills-lock.json
 CLAUDE.md
