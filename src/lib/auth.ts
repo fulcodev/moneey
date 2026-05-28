@@ -1,5 +1,4 @@
 import {
-  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
@@ -9,11 +8,6 @@ import { getAuthInstance } from './firebase'
 
 export function onAuthChange(callback: (user: User | null) => void) {
   return onAuthStateChanged(getAuthInstance(), callback)
-}
-
-export async function registerWithEmail(email: string, password: string) {
-  const result = await createUserWithEmailAndPassword(getAuthInstance(), email, password)
-  return result.user
 }
 
 export async function loginWithEmail(email: string, password: string) {

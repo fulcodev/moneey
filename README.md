@@ -20,24 +20,33 @@ App de finanzas personales con moneda base USD, conversión VES, dashboards inte
 ## Requisitos
 
 - Node.js >= 20
-- Cuenta Firebase (proyecto `moneey-df341`)
-- Claves reCAPTCHA v3
+- Proyecto Firebase con Auth (email/password) y Firestore habilitados
+- Claves de reCAPTCHA v3 (opcional, funciona sin ellas)
 
 ## Variables de entorno
 
-Crear `.env.local`:
+Crear `.env.local` con los datos de tu proyecto Firebase:
 
 ```env
-NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSyDKDuiMLgr0Lc8dMyq7Ro6VoAQT-08LX5Y
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=moneey-df341.firebaseapp.com
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=moneey-df341
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=moneey-df341.firebasestorage.app
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=416445588284
-NEXT_PUBLIC_FIREBASE_APP_ID=1:416445588284:web:0759585aeffe40ca66f439
-NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-WSHQNE2HM1
-NEXT_PUBLIC_RECAPTCHA_SITE_KEY=6LcbHQEtAAAAAHmXk-ikERlBbVAffaI7POz1Ifvy
-RECAPTCHA_SECRET_KEY=6LcbHQEtAAAAADX4FJhJ-0eB8vWPtKA2UraWG7kh
+NEXT_PUBLIC_FIREBASE_API_KEY=tu-api-key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=tu-proyecto.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=tu-project-id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=tu-proyecto.firebasestorage.app
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=tu-sender-id
+NEXT_PUBLIC_FIREBASE_APP_ID=tu-app-id
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=tu-measurement-id
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=tu-site-key
+RECAPTCHA_SECRET_KEY=tu-secret-key
 ```
+
+## Crear usuario en Firebase
+
+Por ser una app personal, no hay registro público. Creá tu usuario manualmente:
+
+1. Andá a [Firebase Console → Authentication → Users](https://console.firebase.google.com/project/moneey-df341/authentication/users)
+2. Click en **Add user**
+3. Ingresá tu email y contraseña
+4. Usá esas credenciales para iniciar sesión en la app
 
 ## Instalación
 
@@ -45,6 +54,7 @@ RECAPTCHA_SECRET_KEY=6LcbHQEtAAAAADX4FJhJ-0eB8vWPtKA2UraWG7kh
 npm install
 npm run dev
 # Abrir http://localhost:3000
+# Iniciar sesión con el usuario creado en Firebase
 ```
 
 ## Deploy a Vercel
